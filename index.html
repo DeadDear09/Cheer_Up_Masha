@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cheer Up Masha!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .message-box {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #cheerButton {
+      margin-top: 30px;
+      background-color: #ff69b4;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #cheerButton:hover {
+      background-color: #ff1493;
+    }
+
+    .affirmation {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #ff1493;
+    }
+
+    .emoji {
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey Masha! 💖</h1>
+  <div class="message-box">
+    <p>You’re one of the funniest, and most amazing people I know!</p>
+    <p>Never ever think that you are bad</p>
+    <button id="cheerButton">Click me for a smile 😊</button>
+    <div id="affirmation" class="affirmation"></div>
+  </div>
+
+  <script>
+    const affirmations = [
+      "You're stronger than you think 💪",
+      "You have a heart of gold 💛",
+      "You are so loved 💕",
+      "Never forget how amazing you are 🦄",
+      "Your smile is contagious 😄",
+      "You're doing better than you think 🌟"
+    ];
+
+    const button = document.getElementById('cheerButton');
+    const display = document.getElementById('affirmation');
+
+    button.addEventListener('click', () => {
+      const message = affirmations[Math.floor(Math.random() * affirmations.length)];
+      display.textContent = message;
+    });
+  </script>
+</body>
+</html>
